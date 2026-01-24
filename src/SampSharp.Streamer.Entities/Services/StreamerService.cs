@@ -13,6 +13,7 @@
 // See the License for the specific language governing permissions and
 // limitations under the License.
 
+using SampSharp.Core.Hosting;
 using SampSharp.Entities;
 using SampSharp.Entities.SAMP;
 
@@ -467,5 +468,31 @@ namespace SampSharp.Streamer.Entities
         }
 
         #endregion
+
+
+        #region Actors
+        /// <inheritdoc/>
+
+        public DynamicActor CreateDynamicActor(int modelid, Vector3 position, float rotation, 
+                        bool invulnerable = true, float health = 100.0f, int virtualWorld = -1, 
+                        int interior = -1, Player player = null, float streamdistance = 200.0f, int areaid = -1, int priority = 0, EntityId parent = default)
+        {
+            var id = _native.CreateDynamicActor(modelid, position.X, position.Y, position.Z, rotation,
+                invulnerable == true ? 1 : 0, health, virtualWorld, interior, player ? player.Entity.Handle : -1,
+                streamdistance, areaid, priority);
+                
+
+            if (id == NativeDynamicActor.InvalidId)
+                throw new EntityCreationException();
+
+            var entity = StreamerEntities.GetDynamicActorId(id);
+            _entityManager.Create(entity, parent);
+
+            _entityManager.AddComponent<NativeDynamicActor>(entity);
+
+            return _entityManager.AddComponent<DynamicActor>(entity);
+        }
+
+#endregion
     }
 }

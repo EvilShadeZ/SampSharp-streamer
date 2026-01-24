@@ -461,5 +461,27 @@ namespace SampSharp.Streamer.Entities
             int virtualWorld = -1, int interior = -1, Player player = null, int priority = 0, EntityId parent = default);
 
         #endregion
+
+        /// <summary>
+        /// Creates a new dynamic actor in the world
+        /// </summary>
+        /// <param name="modelid">Skin model id</param>
+        /// <param name="position">The position</param>
+        /// <param name="rotation">Z Facing angle</param>
+        /// <param name="invulnerable">Is actor invulnerable</param>
+        /// <param name="health">Actors health</param>
+        /// <param name="virtualWorld">Virtual World</param>
+        /// <param name="interior">The interior</param>
+        /// <param name="player">The player</param>
+        /// <param name="streamdistance">The stream distance</param>
+        /// <param name="areaid">The areaid</param>
+        /// <param name="priority">The priority</param>
+        /// <param name="parent">The EntityId parent</param>
+        /// <returns></returns>
+        DynamicActor CreateDynamicActor(int modelid, Vector3 position, float rotation,
+                bool invulnerable = true, float health = 100.0f, int virtualWorld = -1,
+                int interior = -1, Player player = null, float streamdistance = 300f, int areaid = -1, int priority = 0, EntityId parent = default);
     }
+        
+        
 }

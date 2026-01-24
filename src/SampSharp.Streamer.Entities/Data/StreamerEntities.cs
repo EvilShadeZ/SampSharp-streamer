@@ -15,6 +15,7 @@
 
 using System;
 using SampSharp.Entities;
+using SampSharp.Entities.SAMP;
 
 namespace SampSharp.Streamer.Entities
 {
@@ -64,6 +65,13 @@ namespace SampSharp.Streamer.Entities
         /// </summary>
         [EntityType]
         public static readonly Guid DynamicAreaType = new Guid("0CEA86BA-978E-4289-913A-14433D8F9362");
+
+        /// <summary>
+        ///     The Streamer dynamic actor entity type identifier.
+        /// </summary>
+        [EntityType]
+        public static readonly Guid DynamicActorType = new Guid("8C52924B-7F70-4A27-A198-784826F3DBB2");
+
 
         /// <summary>
         /// Gets a dynamic object entity identifier based on an integer dynamic object identifier.
@@ -134,5 +142,19 @@ namespace SampSharp.Streamer.Entities
         {
             return new EntityId(DynamicAreaType, areaId);
         }
+
+        /// <summary>
+        /// Gets a dynamic actor entity identifier based on an integer dynamic actor identifier.
+        /// </summary>
+        /// <param name="actorId">The dynamic actor identifier.</param>
+        /// <returns>The entity identifier.</returns>
+        public static EntityId GetDynamicActorId(int actorId)
+        {
+            return new EntityId(DynamicActorType, actorId);
+        }
+
+
+
+
     }
 }

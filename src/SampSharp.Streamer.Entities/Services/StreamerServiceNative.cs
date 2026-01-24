@@ -14,6 +14,7 @@
 // limitations under the License.
 
 using SampSharp.Core.Natives.NativeObjects;
+using SampSharp.Entities.SAMP;
 
 #pragma warning disable 1591
 
@@ -233,6 +234,15 @@ namespace SampSharp.Streamer.Entities
         [NativeMethod]
         public virtual int CreateDynamicPolygon(float[] points, float minz, float maxz, int maxpoints, int worldid,
             int interiorid, int playerid, int priority)
+        {
+            throw new NativeNotImplementedException();
+        }
+        #endregion
+
+        #region Actors
+
+        [NativeMethod]
+        public virtual int CreateDynamicActor(int modelid, float x, float y, float z, float r, int invulnerable, float health, int worldid, int interiorid , int playerid,  float streamdistance, int areaid, int priority)
         {
             throw new NativeNotImplementedException();
         }

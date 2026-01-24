@@ -38,7 +38,8 @@ namespace SampSharp.Streamer.Entities
                 .EnableDynamicPickupEvents()
                 .EnableDynamicCheckpointEvents()
                 .EnableDynamicRaceCheckpointEvents()
-                .EnableDynamicAreaEvents();
+                .EnableDynamicAreaEvents()
+                .EnableDynamicActorEvents();
 
             return builder;
         }
@@ -124,5 +125,22 @@ namespace SampSharp.Streamer.Entities
 
             return builder;
         }
+
+        /// <summary>
+        /// Enables all dynamic area related Streamer events.
+        /// </summary>
+        /// <param name="builder">The builder.</param>
+        /// <returns>The builder.</returns>
+        public static IEcsBuilder EnableDynamicActorEvents(this IEcsBuilder builder)
+        {
+            builder.EnableEvent<int, int>("OnDynamicActorStreamIn");
+            builder.EnableEvent<int, int>("OnDynamicActorStreamOut");
+
+            builder.UseMiddleware<DynamicActorStreamInForPlayerMiddleware>("OnDynamicActorStreamIn");
+            builder.UseMiddleware<DynamicActorStreamInForPlayerMiddleware>("OnDynamicActorStreamOut");
+
+            return builder;
+        }
+
     }
 }

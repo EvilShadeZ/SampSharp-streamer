@@ -23,7 +23,7 @@ namespace SampSharp.Streamer.Entities
         /// <summary>
         ///     Identifier indicating the handle is invalid.
         /// </summary>
-        public const int InvalidId = 0xFFFF;
+        public const int InvalidId = 0x0;
 
         [NativeMethod]
         public virtual bool IsValidDynamicArea()
