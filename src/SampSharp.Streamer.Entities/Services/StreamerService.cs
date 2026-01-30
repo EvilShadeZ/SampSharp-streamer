@@ -52,23 +52,25 @@ namespace SampSharp.Streamer.Entities
         /// <inheritdoc />
         public int GetVisibleItems(StreamerType type, EntityId player)
         {
-            if (!player.IsOfAnyType(SampEntities.PlayerType))
+            var handle = -1;
+            if (player.IsOfAnyType(SampEntities.PlayerType))
             {
-                throw new InvalidEntityArgumentException(nameof(player), SampEntities.PlayerType);
+                handle = player.Handle;
             }
 
-            return _native.Streamer_GetVisibleItems((int)type, player.Handle);
+            return _native.Streamer_GetVisibleItems((int)type, handle);
         }
 
         /// <inheritdoc />
         public int SetVisibleItems(StreamerType type, int items, EntityId player)
         {
-            if (!player.IsOfAnyType(SampEntities.PlayerType))
+            var handle = -1;
+            if (player.IsOfAnyType(SampEntities.PlayerType))
             {
-                throw new InvalidEntityArgumentException(nameof(player), SampEntities.PlayerType);
+                handle = player.Handle;
             }
 
-            return _native.Streamer_SetVisibleItems((int)type, items, player.Handle);
+            return _native.Streamer_SetVisibleItems((int)type, items, handle);
         }
 
         /// <inheritdoc />
