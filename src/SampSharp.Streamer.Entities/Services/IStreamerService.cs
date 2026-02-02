@@ -74,8 +74,47 @@ namespace SampSharp.Streamer.Entities
         ///		<see cref="int"/>
         /// </returns>
         int SetRadiusMultiplier(StreamerType type, float multiplier, EntityId playerid);
-        #endregion
+        
 
+        /// <summary>
+        /// Gets the float data for the entity
+        /// </summary>
+        /// <param name="type">The item type.</param>
+        /// <param name="entity">The entity</param>
+        /// <param name="data">The data</param>
+        /// <returns></returns>
+        float GetFloatData(StreamerType type, EntityId entity, StreamerDataType data);
+
+        /// <summary>
+        /// sets the float data for the entity
+        /// </summary>
+        /// <param name="type">The item type.</param>
+        /// <param name="entity">The entity</param>
+        /// <param name="data">The data</param>
+        /// <param name="value">The value</param>
+        /// <returns></returns>
+        bool SetFloatData(StreamerType type, EntityId entity, StreamerDataType data, float value);
+        
+        /// <summary>
+        /// Gets the int data for the entity
+        /// </summary>
+        /// <param name="type">The item type.</param>
+        /// <param name="entity">The entity</param>
+        /// <param name="data">The data</param>
+        /// <returns></returns>
+        int GetIntData(StreamerType type, EntityId entity, StreamerDataType data);
+
+        /// <summary>
+        /// sets the int data for the entity
+        /// </summary>
+        /// <param name="type">The item type.</param>
+        /// <param name="entity">The entity</param>
+        /// <param name="data">The data</param>
+        /// <param name="value">The value</param>
+        /// <returns></returns>
+        bool SetIntData(StreamerType type, EntityId entity, StreamerDataType data, int value);
+
+        #endregion
         #region Updates
 
         /// <summary>

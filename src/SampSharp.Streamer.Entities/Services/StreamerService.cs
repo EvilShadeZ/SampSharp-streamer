@@ -92,9 +92,9 @@ namespace SampSharp.Streamer.Entities
         }
 
         /// <inheritdoc />
-        public int SetFloatData(StreamerType type, EntityId entity, StreamerDataType data, float value)
+        public bool SetFloatData(StreamerType type, EntityId entity, StreamerDataType data, float value)
         {
-            return _native.Streamer_SetFloatData((int)type, entity.Handle, (int)data, value);
+            return _native.Streamer_SetFloatData((int)type, entity.Handle, (int)data, value) == 1;
         }
 
         /// <inheritdoc />
@@ -105,9 +105,9 @@ namespace SampSharp.Streamer.Entities
         }
 
         /// <inheritdoc />
-        public int SetIntData(StreamerType type, EntityId entity, StreamerDataType data, int value)
+        public bool SetIntData(StreamerType type, EntityId entity, StreamerDataType data, int value)
         {
-            return _native.Streamer_SetFloatData((int)type, entity.Handle, (int)data, value);
+            return _native.Streamer_SetFloatData((int)type, entity.Handle, (int)data, value) == 1;
         }
 
 
