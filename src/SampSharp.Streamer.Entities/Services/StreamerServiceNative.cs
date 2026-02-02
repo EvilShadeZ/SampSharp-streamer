@@ -54,22 +54,25 @@ namespace SampSharp.Streamer.Entities
             throw new NativeNotImplementedException();
         }
 
+        [NativeMethod]
         public virtual int Streamer_GetFloatData(int type, int id, int data, out float result)
         {
             throw new NativeNotImplementedException(); 
         }
 
+        [NativeMethod]
         public virtual int Streamer_SetFloatData(int type, int id, int data, float value)
         {
             throw new NativeNotImplementedException();
         }
 
-
+        [NativeMethod]
         public virtual int Streamer_GetIntData(int type, int id, int data, out int result)
         {
             throw new NativeNotImplementedException();
         }
 
+        [NativeMethod]
         public virtual int Streamer_SetIntData(int type, int id, int data, int value)
         {
             throw new NativeNotImplementedException();
