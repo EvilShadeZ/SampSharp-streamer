@@ -83,6 +83,34 @@ namespace SampSharp.Streamer.Entities
 
             return _native.Streamer_SetRadiusMultiplier((int)type, multiplier, player.Handle);
         }
+
+        /// <inheritdoc />
+        public float GetFloatData(StreamerType type, EntityId entity, StreamerDataType data)
+        {
+            _native.Streamer_GetFloatData((int)type, entity.Handle, (int)data, out var result);
+            return result;
+        }
+
+        /// <inheritdoc />
+        public int SetFloatData(StreamerType type, EntityId entity, StreamerDataType data, float value)
+        {
+            return _native.Streamer_SetFloatData((int)type, entity.Handle, (int)data, value);
+        }
+
+        /// <inheritdoc />
+        public int GetIntData(StreamerType type, EntityId entity, StreamerDataType data)
+        {
+            _native.Streamer_GetIntData((int)type, entity.Handle, (int)data, out var result);
+            return result;
+        }
+
+        /// <inheritdoc />
+        public int SetIntData(StreamerType type, EntityId entity, StreamerDataType data, int value)
+        {
+            return _native.Streamer_SetFloatData((int)type, entity.Handle, (int)data, value);
+        }
+
+
         #endregion
 
         #region Updates

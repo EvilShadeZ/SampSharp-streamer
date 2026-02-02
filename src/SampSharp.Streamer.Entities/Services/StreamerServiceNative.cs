@@ -15,6 +15,7 @@
 
 using SampSharp.Core.Natives.NativeObjects;
 using SampSharp.Entities.SAMP;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 #pragma warning disable 1591
 
@@ -52,6 +53,29 @@ namespace SampSharp.Streamer.Entities
         {
             throw new NativeNotImplementedException();
         }
+
+        public virtual int Streamer_GetFloatData(int type, int id, int data, out float result)
+        {
+            throw new NativeNotImplementedException(); 
+        }
+
+        public virtual int Streamer_SetFloatData(int type, int id, int data, float value)
+        {
+            throw new NativeNotImplementedException();
+        }
+
+
+        public virtual int Streamer_GetIntData(int type, int id, int data, out int result)
+        {
+            throw new NativeNotImplementedException();
+        }
+
+        public virtual int Streamer_SetIntData(int type, int id, int data, int value)
+        {
+            throw new NativeNotImplementedException();
+        }
+
+
         #endregion
 
         #region Updates
